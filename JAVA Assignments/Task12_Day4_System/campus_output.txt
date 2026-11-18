@@ -1,0 +1,9 @@
+Ticket#1 TwoWheeler[TN01AB1111] at 0/0 [HOURLY]
+Ticket#4 DeliveryVan[TN04VN4444] at 0/3 [HOURLY]
+fee 20.0
+fee 90.0
+fee 126.0
+fee 90.0
+fee 40.0
+fee 150.0
+collection 516.0

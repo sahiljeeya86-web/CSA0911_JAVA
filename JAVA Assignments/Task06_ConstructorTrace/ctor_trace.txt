@@ -1,0 +1,5 @@
+new ElectricCar("TN03C3"):
+  1. Vehicle(String) runs, regNo = TN03C3
+  2. Car(String, int) runs, seats = 5
+  (Car(String) runs and chains to Car(String, int))
+  3. ElectricCar(String) runs
