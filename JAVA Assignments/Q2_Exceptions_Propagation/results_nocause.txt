@@ -1,0 +1,6 @@
+Chained trace for T4:
+SubmissionStorageException: Could not store big.pdf
+	at Storage.save(Storage.java:12)
+	at Service.submit(Service.java:19)
+	at PortalDemo.main(PortalDemo.java:25)
+getCause(): null

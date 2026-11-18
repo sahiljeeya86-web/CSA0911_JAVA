@@ -1,0 +1,7 @@
+== put/take of 200000 items, one producer, one consumer, capacity 5 (median of 5 runs) ==
+  wait/notifyAll counter: 209895 us total, 1049.5 ns per item
+  ArrayBlockingQueue:     223290 us total, 1116.5 ns per item
+== 2000 opposite transfers in each direction ==
+  tryLock with timeout: 3757 us total, back-offs = 0, balances total = 2000
+  lock ordering:        4285 us total, balances total = 2000
+exit=0

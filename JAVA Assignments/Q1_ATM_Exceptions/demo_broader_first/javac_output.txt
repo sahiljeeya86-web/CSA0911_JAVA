@@ -1,0 +1,4 @@
+BroaderFirst.java:7: error: exception NumberFormatException has already been caught
+        } catch (NumberFormatException e) {           // narrower child second: unreachable
+          ^
+1 error

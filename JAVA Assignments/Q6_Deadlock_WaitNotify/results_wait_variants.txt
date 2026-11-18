@@ -1,0 +1,4 @@
+while + notifyAll: 200 trials -> {OK=200}; trials with count outside 0..5: 0
+if + notifyAll: 200 trials -> {OK=99, WRONG SUM 108=1, WRONG SUM 135=4, WRONG SUM 145=3, WRONG SUM 165=35, WRONG SUM 175=1, WRONG SUM 184=1, WRONG SUM 190=47, WRONG SUM 195=1, WRONG SUM 200=5, WRONG SUM 205=1, WRONG SUM 4=1, WRONG SUM 75=1}; trials with count outside 0..5: 101
+while + notify: 200 trials -> {OK=200}; trials with count outside 0..5: 0
+if + notify: 200 trials -> {OK=88, WRONG SUM 145=1, WRONG SUM 165=59, WRONG SUM 175=1, WRONG SUM 190=40, WRONG SUM 195=1, WRONG SUM 200=6, WRONG SUM 60=1, WRONG SUM 75=3}; trials with count outside 0..5: 112

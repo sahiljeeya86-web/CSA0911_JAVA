@@ -1,0 +1,33 @@
+A. good input, manual close in try body
+  total = 8250
+  opened=10 closed=10 still open=0
+B. good input, manual close in finally
+  total = 8250
+  opened=10 closed=10 still open=0
+C. good input, try-with-resources
+  total = 8250
+  opened=10 closed=10 still open=0
+D. store04 malformed, manual close in try body
+  report failed: bad line 6 in store04.txt: bad,row
+  exception: RuntimeException
+  opened=5 closed=0 still open=5
+    LEAK store00.txt  opened at Reports.manualLeaky(Reports.java:29)
+    LEAK store01.txt  opened at Reports.manualLeaky(Reports.java:29)
+    LEAK store02.txt  opened at Reports.manualLeaky(Reports.java:29)
+    LEAK store03.txt  opened at Reports.manualLeaky(Reports.java:29)
+    LEAK store04.txt  opened at Reports.manualLeaky(Reports.java:29)
+E. store04 malformed, manual close in finally
+  report failed on store04.txt: bad line 6 in store04.txt: bad,row
+  exception: RuntimeException
+  opened=5 closed=5 still open=0
+F. store04 malformed, try-with-resources
+  report failed on store04.txt: bad line 6 in store04.txt: bad,row
+  exception: RuntimeException
+  opened=5 closed=5 still open=0
+G. suppressed exception demo:
+  body runs and fails
+  close B
+  close A
+primary: java.lang.IllegalStateException: body failed
+  suppressed: java.io.IOException: close failed for B
+  suppressed: java.io.IOException: close failed for A

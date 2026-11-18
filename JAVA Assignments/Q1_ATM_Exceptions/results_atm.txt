@@ -1,0 +1,18 @@
+T   intent                         inputs                                                -> outcome
+T1   valid withdrawal               acc=1001     amt=500      -> DISPENSED 500, new balance 500                                 | catch: no exception                   | finally: ran
+T2   letters in the amount          acc=1001     amt=abc      -> REJECTED - not a number: For input string: "abc"               | catch: NumberFormatException          | finally: ran
+T3   letters in the account number  acc=10x1     amt=100      -> REJECTED - not a number: For input string: "10x1"              | catch: NumberFormatException          | finally: ran
+T4   negative amount                acc=1001     amt=-200     -> REJECTED - amount must be positive, got -200                   | catch: IllegalArgumentException       | finally: ran
+T5   more than the balance          acc=1002     amt=5000     -> REJECTED - requested 5000 but balance is 200                   | catch: InsufficientFundsException     | finally: ran
+T6   card-reader file missing       acc=1001     amt=100      -> CARD READER ERROR - NoSuchFileException: missing_card.txt      | catch: IOException                    | finally: ran
+T7   unknown account                acc=9999     amt=100      -> REJECTED - unknown account 9999                                | catch: UnknownAccountException        | finally: ran
+T8   zero amount (boundary)         acc=1001     amt=0        -> REJECTED - amount must be positive, got 0                      | catch: IllegalArgumentException       | finally: ran
+T9   null account (programming error) acc=null     amt=100      -> UNCAUGHT java.lang.NullPointerException                        | catch: none (propagated)              | finally: ran
+T10  balance is zero (boundary)     acc=1003     amt=1        -> REJECTED - requested 1 but balance is 0                        | catch: InsufficientFundsException     | finally: ran
+
+audit lines written by the finally block: 10
+
+Stack trace of the uncaught exception in T9 (printed by the JVM when nothing catches it):
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "String.trim()" because "<parameter1>" is null
+	at Atm.withdraw(Atm.java:34)
+	at AtmTests.main(AtmTests.java:39)

@@ -1,0 +1,10 @@
+(OS limit for open files: see ulimit -n)
+good input  manual in try body     ok                       peak open= 2000  still open at end=    0  time=  229 ms
+good input  manual in finally      ok                       peak open=    1  still open at end=    0  time=   76 ms
+good input  try-with-resources     ok                       peak open=    1  still open at end=    0  time=   51 ms
+  report failed: bad line 6 in stores_2000_1500/s01500.txt: bad,row
+bad at 1500 manual in try body     failed                   peak open= 1501  still open at end= 1501  time=  125 ms
+  report failed on stores_2000_1500/s01500.txt: bad line 6 in stores_2000_1500/s01500.txt: bad,row
+bad at 1500 manual in finally      failed                   peak open=    1  still open at end=    0  time=   53 ms
+  report failed on stores_2000_1500/s01500.txt: bad line 6 in stores_2000_1500/s01500.txt: bad,row
+bad at 1500 try-with-resources     failed                   peak open=    1  still open at end=    0  time=   37 ms

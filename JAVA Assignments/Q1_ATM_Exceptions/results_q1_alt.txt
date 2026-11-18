@@ -1,0 +1,9 @@
+== A. Parsing: exceptions versus error codes (ns per call) ==
+  valid input    try/catch:      7.8 ns   hand check + error code:     30.9 ns
+  invalid input  try/catch:    422.9 ns   hand check + error code:      2.8 ns
+== B. Cost of creating and throwing one exception (ns) ==
+  stack depth    1: with stack trace        618 ns, stack trace disabled      309 ns
+  stack depth   10: with stack trace        777 ns, stack trace disabled       39 ns
+  stack depth  100: with stack trace       2342 ns, stack trace disabled       77 ns
+  returning an error code (for comparison): 11.64 ns
+sink=644506774340838

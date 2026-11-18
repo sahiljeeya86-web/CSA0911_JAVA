@@ -1,0 +1,15 @@
+T1 window closed:  Submission refused: The submission window for CO3-Closed has closed.
+T2 not registered: Submission refused: S999 is not registered for CSA0911.
+T3 file too large: Submission refused: a3.pdf is 2500 KB; the limit is 2000 KB. Please compress the file.
+T4 storage fails:  Your answer could not be saved. Please try again later. (reference Could not store a4.pdf)
+  storage: saved a5.pdf
+T5 valid:          Your answer a5.pdf was accepted.
+Chained trace for T4:
+SubmissionStorageException: Could not store big.pdf
+	at Storage.save(Storage.java:12)
+	at Service.submit(Service.java:19)
+	at PortalDemo.main(PortalDemo.java:25)
+Caused by: java.io.IOException: Disk quota exceeded
+	at Storage.save(Storage.java:9)
+	... 2 more
+getCause(): java.io.IOException: Disk quota exceeded

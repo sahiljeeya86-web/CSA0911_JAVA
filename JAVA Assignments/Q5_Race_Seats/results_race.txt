@@ -1,0 +1,10 @@
+== A. Double booking over 2000 trials (100 users, 10 seats, each trial a new screen) ==
+  A1 unsynchronized, as written      trials with double booking:     0 / 2000   total double bookings:      0   worst trial: 0
+  A2 unsynchronized, Thread.yield() in window trials with double booking:  1995 / 2000   total double bookings:  63414   worst trial: 60
+  A3 synchronized method             trials with double booking:     0 / 2000   total double bookings:      0   worst trial: 0
+  A4 synchronized block              trials with double booking:     0 / 2000   total double bookings:      0   worst trial: 0
+== B. Time for 10,000 bookings (10 threads x 1,000 bookings on 100,000 seats), 200 screens per run, median of 5 runs ==
+  SyncMethod            584 us per 10,000 bookings (median of 5 runs)
+  SyncMethodWithWork      575 us per 10,000 bookings (median of 5 runs)
+  SyncBlock             602 us per 10,000 bookings (median of 5 runs)
+  Plain (unsafe)        407 us per 10,000 bookings (median of 5 runs)

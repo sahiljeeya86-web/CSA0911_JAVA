@@ -1,0 +1,6 @@
+student,S00009
+mark,SUB1,76
+mark,SUB2,89
+mark,SUB3,1
+mark,SUB4,14
+mark,SUB5,27

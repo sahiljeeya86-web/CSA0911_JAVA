@@ -1,0 +1,16 @@
+== I/O-like scripts (10 ms waiting each), n = 200 ==
+  threads  time (ms)   expected ~ n*10/p
+        1       2046   2000
+        2       1024   1000
+        4        510   500
+        8        254   250
+       16        133   125
+  one thread per script: 31 ms (200 threads created)
+
+== CPU-bound scripts, n = 40 (the machine has 1 core) ==
+  pool 1 threads: 57 ms
+  pool 2 threads: 50 ms
+  pool 4 threads: 51 ms
+  pool 8 threads: 52 ms
+  one thread per script: 52 ms
+sink=2148446494169760120

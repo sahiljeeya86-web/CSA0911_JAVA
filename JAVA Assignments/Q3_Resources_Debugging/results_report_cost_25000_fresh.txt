@@ -1,0 +1,10 @@
+  report failed: stores_25000_-1/s19996.txt (Too many open files)
+n=25000 badAt=-1 manual in try body     Too many open files      peak open=19996  still open at end=19996  time= 1071 ms
+n=25000 badAt=-1 manual in finally      ok                       peak open=    1  still open at end=    0  time=  707 ms
+n=25000 badAt=-1 try-with-resources     ok                       peak open=    1  still open at end=    0  time=  571 ms
+  report failed: bad line 6 in stores_2000_1500/s01500.txt: bad,row
+n=2000 badAt=1500 manual in try body     failed                   peak open= 1501  still open at end= 1501  time=  145 ms
+  report failed on stores_2000_1500/s01500.txt: bad line 6 in stores_2000_1500/s01500.txt: bad,row
+n=2000 badAt=1500 manual in finally      failed                   peak open=    1  still open at end=    0  time=  131 ms
+  report failed on stores_2000_1500/s01500.txt: bad line 6 in stores_2000_1500/s01500.txt: bad,row
+n=2000 badAt=1500 try-with-resources     failed                   peak open=    1  still open at end=    0  time=  152 ms

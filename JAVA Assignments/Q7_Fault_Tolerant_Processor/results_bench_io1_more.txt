@@ -1,0 +1,8 @@
+expected by generator: {corrupt=514, missing=91, poison=403, valid=8992}
+n=10000 threads=16 io=1 ms: files=10000 ok=8992 corrupt=514 missing=91 internal=403 io=0 unhandled=0 time=898 ms
+expected by generator: {corrupt=514, missing=91, poison=403, valid=8992}
+n=10000 threads=32 io=1 ms: files=10000 ok=8992 corrupt=514 missing=91 internal=403 io=0 unhandled=0 time=730 ms
+expected by generator: {corrupt=514, missing=91, poison=403, valid=8992}
+n=10000 threads=64 io=1 ms: files=10000 ok=8992 corrupt=514 missing=91 internal=403 io=0 unhandled=0 time=761 ms
+expected by generator: {corrupt=514, missing=91, poison=403, valid=8992}
+n=10000 threads=128 io=1 ms: files=10000 ok=8992 corrupt=514 missing=91 internal=403 io=0 unhandled=0 time=752 ms

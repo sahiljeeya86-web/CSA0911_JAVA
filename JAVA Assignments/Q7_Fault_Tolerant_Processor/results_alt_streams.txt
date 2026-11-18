@@ -1,0 +1,4 @@
+parallelStream: ok=8992 other=1008 time=5791 ms
+8: ok=8992 other=1008 time=1748 ms
+threads created: 10000
+threadPerFile: ok=8992 other=1008 time=1947 ms

@@ -1,0 +1,8 @@
+unsafe lock order: threads still alive after 1 s = true; JVM deadlock detector: 2 deadlocked threads
+  A-to-B is BLOCKED waiting for lock held by B-to-A
+  B-to-A is BLOCKED waiting for lock held by A-to-B
+  balances: A=1000 B=1000 total=2000 (expected 2000)
+exit=0
+ordered lock order: threads still alive after 1 s = false; JVM deadlock detector: 0 deadlocked threads
+  balances: A=950 B=1050 total=2000 (expected 2000)
+exit=0

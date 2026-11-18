@@ -1,0 +1,15 @@
+== run vs start
+calling run() directly in main
+main finished 1 scripts
+calling start() instead:
+Thread-0 finished 1 scripts
+== main (life cycle and join)
+life cycle before start: NEW, isAlive=false
+life cycle just after start: TIMED_WAITING, isAlive=true
+Station-B finished 15 scripts
+Station-A finished 20 scripts
+Station-C finished 25 scripts
+life cycle after join: TERMINATED, isAlive=false, TERMINATED isAlive=false
+TOTAL scripts scanned: 60 (expected 60)
+== daemon
+main ends now, daemon isAlive=true
