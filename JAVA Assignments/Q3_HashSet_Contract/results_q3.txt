@@ -1,0 +1,15 @@
+TEST 1 - one object per student, each scanned once
+  predicted 1000 (both)   bad class size=1000   good class size=1000
+TEST 2 - 1000 students, each scanned again as a NEW object (duplicate scans)
+  predicted 2000 bad, 1000 good   bad class size=2000   good class size=1000
+TEST 3 - change regNo after insertion (good class with hashCode)
+  predicted contains(original value)=false, size=1
+  contains(object)=false   size=1   remove(object)=false   size after remove=1
+  a new equal object is found: true
+TEST 4 - TreeSet with compareTo on name only (equal names, different regNo)
+  predicted size=1   observed size=1
+  same two students in a HashSet: size=2
+TIMING - cost of one add with a good key (average over repeated runs)
+  n=1000      HashSet 6428.8 ns/add   TreeSet(regNo) 6826.0 ns/add
+  n=100000    HashSet 1245.2 ns/add   TreeSet(regNo) 991.7 ns/add
+  n=1000000   HashSet 480.5 ns/add   TreeSet(regNo) 743.6 ns/add

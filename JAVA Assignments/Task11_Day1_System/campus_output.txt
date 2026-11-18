@@ -1,7 +1,0 @@
-Ticket#1 TwoWheeler[TN01AB1111] at 0/0
-Ticket#2 Car[TN02CD2222] at 0/1
-Ticket#3 ElectricCar[TN03EF3333] at 0/2
-fee 20.0
-fee 90.0
-fee 126.0
-collection 236.0

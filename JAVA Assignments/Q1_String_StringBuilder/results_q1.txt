@@ -1,0 +1,27 @@
+== Time per ticket (median of 5 runs) and bytes allocated per ticket ==
+W1 short ticket (1 ticket, 10 fields) x 20,000 repeats
+  + concatenation                    3919.1 ns/ticket         1232.0 bytes/ticket
+  StringBuilder                      2242.6 ns/ticket         1024.0 bytes/ticket
+  StringBuffer                       1893.8 ns/ticket         1024.0 bytes/ticket
+  StringJoiner                       1633.3 ns/ticket          856.0 bytes/ticket
+  String.format (short only)         3279.0 ns/ticket         5336.0 bytes/ticket
+  + loop, exact: intermediate String objects per ticket = 10, characters copied per ticket = 513
+  StringBuilder: intermediate String objects per ticket = 1 (final toString), final length L = 96, characters copied = about L (toString) plus at most about 2L during growth
+
+W2 10,000 tickets x 50 fields
+  + concatenation                    5925.7 ns/ticket        17064.0 bytes/ticket
+  StringBuilder                      1746.6 ns/ticket         4600.0 bytes/ticket
+  StringBuffer                       2885.3 ns/ticket         4600.0 bytes/ticket
+  StringJoiner                       2476.6 ns/ticket         3912.0 bytes/ticket
+  + loop, exact: intermediate String objects per ticket = 50, characters copied per ticket = 13330
+  StringBuilder: intermediate String objects per ticket = 1 (final toString), final length L = 534, characters copied = about L (toString) plus at most about 2L during growth
+
+W3 own: 100 tickets x 500 fields
+  + concatenation                  108070.0 ns/ticket      1479280.0 bytes/ticket
+  StringBuilder                      8861.3 ns/ticket        52456.0 bytes/ticket
+  StringBuffer                      11428.9 ns/ticket        52456.0 bytes/ticket
+  StringJoiner                       9421.5 ns/ticket        38056.0 bytes/ticket
+  + loop, exact: intermediate String objects per ticket = 500, characters copied per ticket = 1441642
+  StringBuilder: intermediate String objects per ticket = 1 (final toString), final length L = 5843, characters copied = about L (toString) plus at most about 2L during growth
+
+sink=135424200
